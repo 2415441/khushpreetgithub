@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freshbit – Real Food. Real Quick.</title>
+  <meta name="description" content="Freshbit delivers chef-crafted, ready-to-eat bites made with real ingredients. Zero junk, maximum flavour.">
+  <meta property="og:title" content="Freshbit">
+  <meta property="og:description" content="Chef-crafted, ready-to-eat bites.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#059669">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23059669' d='M32 6c12 8 18 16 18 26S42 58 32 58 14 48 14 32 20 14 32 6z'/%3E%3C/svg%3E">
+  <!-- Tailwind CSS via CDN for a simple, portable setup -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#059669' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth scrolling and focus outline for accessibility */
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #059669; outline-offset: 2px; }
+  </style>
+</head>
+<body class="text-gray-900 bg-gradient-to-b from-emerald-50 via-white to-white">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 bg-white border rounded px-3 py-2">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-emerald-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2" aria-label="Freshbit home">
+        <span class="grid place-items-center h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow">
+          <!-- Leaf icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 21c7 0 14-7 14-14V3h-4C8 3 3 8 3 15v6h2z"/></svg>
+        </span>
+        <span class="font-extrabold tracking-tight text-lg">Freshbit</span>
+      </a>
+      <nav class="hidden md:flex items-center" aria-label="Primary">
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#features">Features</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#about">About</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#menu">Menu</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#pricing">Pricing</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#contact">Contact</a>
+        <a href="#cta" class="ml-4 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-white text-sm font-semibold shadow hover:bg-emerald-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4h-2l-1 2H2v2h2l3.6 7.59L6 18c0 1.1.9 2 2 2h12v-2H8.42c-.14 0-.25-.11-.25-.25l.03-.12L9.1 15h7.45c.75 0 1.41-.41 1.75-1.03L21.58 9H7.21l-.94-2H7V4z"/></svg>
+          Order now
+        </a>
+      </nav>
+      <button class="md:hidden p-2 rounded hover:bg-white" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">
+        <span class="sr-only">Toggle menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-nav" class="hidden md:hidden border-t border-emerald-50 bg-white/80 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col">
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#features">Features</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#about">About</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#menu">Menu</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#pricing">Pricing</a>
+        <a class="px-3 py-2 text-sm font-medium hover:text-emerald-700" href="#contact">Contact</a>
+        <a href="#cta" class="mt-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-white text-sm font-semibold shadow w-fit">Order now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative">
+      <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-semibold text-emerald-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l4 8 5-5 7 15H3z"/></svg>
+            New: Seasonal boxes now shipping
+          </span>
+          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+            Bite into <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">fresh</span> goodness
+          </h1>
+          <p class="mt-4 text-gray-600 text-lg max-w-prose">
+            Freshbit delivers chef-crafted, ready-to-eat bites made with real ingredients. Zero junk, maximum flavour.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#cta" class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-white font-semibold shadow hover:bg-emerald-700">
+              Get started
+            </a>
+            <a href="#about" class="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-semibold hover:bg-white">Learn more</a>
+          </div>
+          <div class="mt-8 grid grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold">10k+</div>
+              <div class="text-sm text-gray-500">Happy customers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold">48h</div>
+              <div class="text-sm text-gray-500">Farm-to-you</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold">100%</div>
+              <div class="text-sm text-gray-500">Recyclable</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-3xl border bg-white shadow-inner overflow-hidden">
+            <svg viewBox="0 0 600 450" class="w-full h-full" role="img" aria-label="Freshbit product collage">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#bbf7d0"/>
+                  <stop offset="100%" stop-color="#99f6e4"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="450" fill="url(#g)"/>
+              <g>
+                <circle cx="120" cy="130" r="70" fill="white"/>
+                <circle cx="300" cy="220" r="110" fill="white"/>
+                <circle cx="470" cy="120" r="80" fill="white"/>
+              </g>
+              <g>
+                <text x="300" y="230" text-anchor="middle" font-size="42" font-weight="800" fill="#065f46">Freshbit</text>
+                <text x="300" y="270" text-anchor="middle" font-size="18" fill="#064e3b">Real food. Real quick.</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Why Freshbit</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="group rounded-2xl p-6 bg-white/70 backdrop-blur shadow-sm hover:shadow-md transition-all border border-emerald-50">
+            <div class="h-12 w-12 rounded-xl grid place-items-center mb-4 shadow-inner bg-emerald-50 group-hover:bg-emerald-100 transition">
+              <span aria-hidden="true">🥬</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Wholesome ingredients</h3>
+            <p class="text-sm text-gray-600">Sourced from local farms and crafted by nutritionists.</p>
+          </div>
+          <div class="group rounded-2xl p-6 bg-white/70 backdrop-blur shadow-sm hover:shadow-md transition-all border border-emerald-50">
+            <div class="h-12 w-12 rounded-xl grid place-items-center mb-4 shadow-inner bg-emerald-50 group-hover:bg-emerald-100 transition">
+              <span aria-hidden="true">✨</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Chef crafted</h3>
+            <p class="text-sm text-gray-600">Balanced flavours and textures in every bite.</p>
+          </div>
+          <div class="group rounded-2xl p-6 bg-white/70 backdrop-blur shadow-sm hover:shadow-md transition-all border border-emerald-50">
+            <div class="h-12 w-12 rounded-xl grid place-items-center mb-4 shadow-inner bg-emerald-50 group-hover:bg-emerald-100 transition">
+              <span aria-hidden="true">🛒</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Ready when you are</h3>
+            <p class="text-sm text-gray-600">Convenient packs for work, gym, and on-the-go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 border-t border-emerald-50 bg-white/60">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">Fresh. Fast. Feel-good.</h2>
+          <p class="text-gray-600 mb-4">We started Freshbit with a simple idea: good food should be effortless. Our team partners with growers and chefs to create seasonal menus that fuel your day without slowing you down.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">✔</span> No artificial preservatives</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">✔</span> High protein, high fibre options</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">✔</span> Transparent sourcing</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">✔</span> Plastic-neutral packaging</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border bg-white shadow-inner p-6">
+          <div class="grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-2xl p-4 bg-emerald-50">
+              <div class="font-semibold">Snack boxes</div>
+              <div class="text-gray-600">Sweet & savoury bite packs</div>
+            </div>
+            <div class="rounded-2xl p-4 bg-emerald-50">
+              <div class="font-semibold">Mini meals</div>
+              <div class="text-gray-600">Lunch-ready portions</div>
+            </div>
+            <div class="rounded-2xl p-4 bg-emerald-50">
+              <div class="font-semibold">Subscription</div>
+              <div class="text-gray-600">Weekly deliveries, pause anytime</div>
+            </div>
+            <div class="rounded-2xl p-4 bg-emerald-50">
+              <div class="font-semibold">Corporate</div>
+              <div class="text-gray-600">Pantry & events catering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">This week’s menu</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Menu cards -->
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Citrus Almond Energy Bites</div>
+            <div class="text-sm text-gray-600">Zesty orange, dates, roasted almond crunch</div>
+            <div class="mt-2 text-xs text-gray-500">~ 220 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Green Goddess Mini Bowl</div>
+            <div class="text-sm text-gray-600">Quinoa, edamame, herby tahini drizzle</div>
+            <div class="mt-2 text-xs text-gray-500">~ 340 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Cocoa Oat Protein Squares</div>
+            <div class="text-sm text-gray-600">Dark cocoa, pea protein, chia</div>
+            <div class="mt-2 text-xs text-gray-500">~ 260 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Spicy Chickpea Crunch</div>
+            <div class="text-sm text-gray-600">Smoked paprika, lemon peel, sea salt</div>
+            <div class="mt-2 text-xs text-gray-500">~ 190 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Berry Yogurt Parfait</div>
+            <div class="text-sm text-gray-600">Greek yogurt, compote, nut granola</div>
+            <div class="mt-2 text-xs text-gray-500">~ 300 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-emerald-50 shadow-sm">
+            <div class="h-36 w-full rounded-xl mb-3 bg-gradient-to-br from-emerald-200 to-teal-200"></div>
+            <div class="font-semibold">Savory Herb Egg Bites</div>
+            <div class="text-sm text-gray-600">Free-range eggs, cheddar, chives</div>
+            <div class="mt-2 text-xs text-gray-500">~ 240 kcal</div>
+            <button class="mt-3 w-full rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-white">Add to basket</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 bg-white/60 border-y border-emerald-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Simple pricing</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 border shadow-sm bg-white">
+            <div class="text-sm font-semibold text-emerald-700">Starter</div>
+            <div class="mt-1 text-3xl font-extrabold">£9<span class="text-base font-medium text-gray-500">/wk</span></div>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Any 2 snack packs</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Free delivery over £20</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Member perks</li>
+            </ul>
+            <button class="mt-5 w-full rounded-xl bg-emerald-600 px-4 py-2 text-white font-semibold hover:bg-emerald-700">Choose Starter</button>
+          </div>
+          <div class="rounded-2xl p-6 border shadow-sm bg-white ring-2 ring-emerald-500">
+            <div class="text-sm font-semibold text-emerald-700">Balanced</div>
+            <div class="mt-1 text-3xl font-extrabold">£19<span class="text-base font-medium text-gray-500">/wk</span></div>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> 1 mini meal + 2 snacks</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Priority support</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Weekly menu swap</li>
+            </ul>
+            <button class="mt-5 w-full rounded-xl bg-emerald-600 px-4 py-2 text-white font-semibold hover:bg-emerald-700">Choose Balanced</button>
+          </div>
+          <div class="rounded-2xl p-6 border shadow-sm bg-white">
+            <div class="text-sm font-semibold text-emerald-700">Power</div>
+            <div class="mt-1 text-3xl font-extrabold">£39<span class="text-base font-medium text-gray-500">/wk</span></div>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> 3 mini meals + 3 snacks</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Nutrition coach tips</li>
+              <li class="flex gap-2"><span class="text-emerald-600">✔</span> Pause anytime</li>
+            </ul>
+            <button class="mt-5 w-full rounded-xl bg-emerald-600 px-4 py-2 text-white font-semibold hover:bg-emerald-700">Choose Power</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Loved by the community</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <figure class="rounded-2xl bg-white p-6 shadow-sm border border-emerald-50">
+            <blockquote class="text-sm leading-relaxed">“Perfect study fuel. Tastes great and keeps me going.”</blockquote>
+            <figcaption class="mt-3 text-sm text-gray-600">— Amelia R., Student</figcaption>
+          </figure>
+          <figure class="rounded-2xl bg-white p-6 shadow-sm border border-emerald-50">
+            <blockquote class="text-sm leading-relaxed">“High-protein bites I can actually pronounce. Win.”</blockquote>
+            <figcaption class="mt-3 text-sm text-gray-600">— Dev P., Trainer</figcaption>
+          </figure>
+          <figure class="rounded-2xl bg-white p-6 shadow-sm border border-emerald-50">
+            <blockquote class="text-sm leading-relaxed">“Subscription makes weekday lunches a breeze.”</blockquote>
+            <figcaption class="mt-3 text-sm text-gray-600">— Sofia L., Designer</figcaption>
+          </figure>
+        </div>
+        <div class="mt-6 flex items-center gap-2">
+          <div class="flex gap-1" aria-label="Average rating 4.9 out of 5">
+            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+          </div>
+          <span class="text-sm">4.9/5 average rating</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-600 text-white p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-extrabold">Ready to try Freshbit?</h3>
+            <p class="mt-1 text-white/90">Join today and get your first box with free delivery.</p>
+          </div>
+          <form class="w-full md:w-auto flex gap-3" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
+            <label for="email" class="sr-only">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" class="w-full md:w-72 rounded-xl px-4 py-3 text-gray-900 placeholder:text-gray-500" required>
+            <button class="rounded-xl bg-white/10 backdrop-blur px-5 py-3 font-semibold border border-white/30 hover:bg-white/20">Notify me</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 border-t border-emerald-50 bg-white/60">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">Get in touch</h2>
+          <p class="text-gray-600 mb-4">Questions, partnerships, or bulk orders? We’d love to hear from you.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-2"><span aria-hidden="true">📧</span> <a class="underline-offset-2 hover:underline" href="mailto:hello@freshbit.example">hello@freshbit.example</a></div>
+            <div class="flex items-center gap-2"><span aria-hidden="true">📞</span> <a class="underline-offset-2 hover:underline" href="tel:+442012345678">+44 20 1234 5678</a></div>
+            <div class="flex items-center gap-2"><span aria-hidden="true">📍</span> London, United Kingdom</div>
+          </div>
+        </div>
+        <form class="rounded-2xl bg-white p-6 shadow-sm border border-emerald-50 grid gap-3" onsubmit="event.preventDefault(); alert('Message sent!');">
+          <label class="text-sm font-medium" for="name">Name</label>
+          <input id="name" class="rounded-lg border px-3 py-2" placeholder="Your name" required>
+
+          <label class="text-sm font-medium" for="email2">Email</label>
+          <input id="email2" class="rounded-lg border px-3 py-2" placeholder="you@example.com" type="email" required>
+
+          <label class="text-sm font-medium" for="message">Message</label>
+          <textarea id="message" class="rounded-lg border px-3 py-2 min-h-[120px]" placeholder="How can we help?" required></textarea>
+
+          <button class="rounded-xl bg-emerald-600 px-4 py-2 text-white font-semibold hover:bg-emerald-700">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="grid place-items-center h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 21c7 0 14-7 14-14V3h-4C8 3 3 8 3 15v6h2z"/></svg>
+        </span>
+        <span class="font-extrabold">Freshbit</span>
+      </div>
+      <p class="text-sm text-gray-500">© <span id="year"></span> Freshbit Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobile-nav');
+    btn?.addEventListener('click', () => {
+      const open = mobile.classList.contains('hidden');
+      mobile.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.innerHTML = open
+        ? '<span class="sr-only">Close menu</span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+        : '<span class="sr-only">Open menu</span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+    });
+    // Year in footer
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
